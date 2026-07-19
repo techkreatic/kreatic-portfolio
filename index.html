@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kreatic Technologies | Company Portfolio</title>
+    <!-- Meta tags for SEO -->
+    <meta name="description"
+        content="Kreatic Technologies helps businesses grow with creativity, technology, and strategy. Explore our portfolio of website development, graphic design, and data dashboards.">
+    <meta name="keywords"
+        content="Kreatic Technologies, Web Development, Graphic Design, Data Analytics, MERN Stack, React, Power BI, Python">
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- FontAwesome CDN for clean icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!-- Fixed Floating Navigation Bar -->
+    <header class="nav-dark" id="main-header">
+        <div class="nav-container">
+            <a href="#hero" class="logo-wrapper" id="nav-logo-link">
+                <img src="images/download.png" alt="Kreatic Technologies Logo" class="logo-img" id="nav-logo-img">
+            </a>
+
+            <nav>
+                <ul class="nav-links" id="nav-menu">
+                    <li><a href="#hero" class="active" id="link-hero">Home</a></li>
+                    <li><a href="#about" id="link-about">About Us</a></li>
+                    <li><a href="#why-us" id="link-why-us">Why Choose Us</a></li>
+                    <li><a href="#services" id="link-services">Services</a></li>
+                    <li><a href="#process" id="link-process">Work Process</a></li>
+                    <li><a href="#tech" id="link-tech">Tech Stack</a></li>
+                    <li><a href="#contact" id="link-contact">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Cover Page / Hero Section (Black Background) -->
+    <section class="section-dark" id="hero">
+        <div class="glow-blob glow-blob-1"
+            style="top: 15%; left: 5%; width: 350px; height: 350px; background: rgba(0, 242, 254, 0.12);"></div>
+        <div class="glow-blob glow-blob-2"
+            style="bottom: 10%; right: 5%; width: 400px; height: 400px; background: rgba(124, 58, 237, 0.15);"></div>
+        <div class="hero-content">
+            <div class="hero-badge moving-border">
+                <span class="content">
+                    Imagine • Innovate • Inspire
+                </span>
+            </div>
+            <h1 class="hero-headline-stacked">
+                <span class="hero-line bold-line">KREATIC</span>
+                <span class="hero-line bold-line-accent">TECHNOLOGIES</span>
+                <span class="hero-line thin-line">ENGINEERING</span>
+                <span class="hero-line thin-line">IDEAS INTO</span>
+                <span class="hero-line thin-line-accent">REALITY</span>
+            </h1>
+            <p class="hero-description">From websites to content, we help businesses grow with creativity, technology
+                and strategy. Let's create something extraordinary together.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primaryx" id="btn-dm-today">DM Us Today <i
+                        class="fa-solid fa-arrow-right"></i></a>
+                <a href="#services" class="btn btn-secondary" id="btn-view-work">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section (White Background) -->
+    <section class="section-light" id="about">
+        <div class="glow-blob glow-blob-1"
+            style="top: 10%; right: 10%; width: 400px; height: 400px; background: rgba(99, 102, 241, 0.08);"></div>
+        <div class="glow-blob glow-blob-2"
+            style="bottom: 15%; left: 5%; width: 300px; height: 300px; background: rgba(6, 182, 212, 0.08);"></div>
+        <div class="about-graphics">
+            <div class="about-card" id="about-c1">
+                <div class="about-card-val" id="about-val-projects">10+</div>
+                <div class="about-card-lbl">Projects Delivered</div>
+            </div>
+            <div class="about-card" id="about-c2">
+                <div class="about-card-val" id="about-val-satisfaction">99%</div>
+                <div class="about-card-lbl">Client Satisfaction</div>
+            </div>
+            <div class="about-card" id="about-c3">
+                <div class="about-card-val" id="about-val-delivery">100%</div>
+                <div class="about-card-lbl">On-Time Delivery</div>
+            </div>
+            <div class="about-card" id="about-c4">
+                <div class="about-card-val" id="about-val-support">24/7</div>
+                <div class="about-card-lbl">Support Available</div>
+            </div>
+        </div>
+        <div class="about-content">
+            <span class="section-subtitle">Who We Are</span>
+            <h2 class="section-title">About <span class="accent-text">Kreatic Technologies</span></h2>
+            <h3>We are a forward-thinking digital agency dedicated to elevating brands through technology and strategy.
+            </h3>
+            <p>At Kreatic Technologies, we combine digital expertise with creative design to formulate strategic
+                campaigns and build custom-coded web products. Our work focuses on developing premium websites,
+                full-featured dashboards, interactive graphics, and brand copy that engage users and deliver measurable
+                growth.</p>
+            <p>Whether you are a startup establishing your brand identity or an enterprise optimizing dashboard
+                analytics, we work as your trusted technology partner to engineer responsive, high-performance systems
+                from the ground up.</p>
+            <a href="#contact" class="btn btn-primary" id="btn-about-contact">Work with Us <i
+                    class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section (White Background) -->
+    <section class="section-light" id="why-us">
+        <div class="glow-blob glow-blob-1"
+            style="top: 20%; left: 15%; width: 350px; height: 350px; background: rgba(139, 92, 246, 0.08);"></div>
+        <div class="section-header">
+            <span class="section-subtitle">Our Core Pillars</span>
+            <h2 class="section-title">Why <span class="accent-text">Choose Us</span></h2>
+        </div>
+
+        <div class="why-grid">
+            <div class="why-card" id="why-quality">
+                <div class="why-icon-outer">
+                    <i class="fa-solid fa-shield-halved why-icon" id="icon-why-quality"></i>
+                </div>
+                <h3>Quality Focused</h3>
+                <p>We maintain high standards of code, design, and UI layouts to deliver clean, bug-free, and premium
+                    digital solutions.</p>
+            </div>
+
+            <div class="why-card" id="why-satisfaction">
+                <div class="why-icon-outer">
+                    <i class="fa-solid fa-handshake-angle why-icon" id="icon-why-satisfaction"></i>
+                </div>
+                <h3>Client Satisfaction</h3>
+                <p>Your business goals are our priority. We maintain open, clear, and active communication throughout
+                    the project roadmap.</p>
+            </div>
+
+            <div class="why-card" id="why-delivery">
+                <div class="why-icon-outer">
+                    <i class="fa-solid fa-clock why-icon" id="icon-why-delivery"></i>
+                </div>
+                <h3>On-Time Delivery</h3>
+                <p>We strictly plan development phases to guarantee that your websites, assets, and analytics are tested
+                    and launched on time.</p>
+            </div>
+
+            <div class="why-card" id="why-pricing">
+                <div class="why-icon-outer">
+                    <i class="fa-solid fa-tags why-icon" id="icon-why-pricing"></i>
+                </div>
+                <h3>Affordable Pricing</h3>
+                <p>Get elite-grade agency products and professional strategy packages at competitive prices tailored to
+                    your budget.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services Section (White Background) -->
+    <section class="section-light" id="services">
+        <div class="glow-blob glow-blob-1"
+            style="top: 10%; left: 5%; width: 400px; height: 400px; background: rgba(6, 182, 212, 0.08);"></div>
+        <div class="glow-blob glow-blob-2"
+            style="bottom: 20%; right: 5%; width: 350px; height: 350px; background: rgba(99, 102, 241, 0.08);"></div>
+        <div class="section-header">
+            <span class="section-subtitle">What We Do</span>
+            <h2 class="section-title">Our <span class="accent-text">Services</span></h2>
+        </div>
+
+        <!-- Core Services Grid -->
+        <div class="services-grid">
+            <div class="service-card" id="service-webdev">
+                <div class="service-icon-outer">
+                    <i class="fa-solid fa-code service-icon" id="icon-service-webdev"></i>
+                </div>
+                <h3>Website Development</h3>
+                <p>Custom dynamic websites built using React, Python, and the MERN stack. Designed to be fast,
+                    responsive, and SEO-friendly.</p>
+            </div>
+
+            <div class="service-card" id="service-graphics">
+                <div class="service-icon-outer">
+                    <i class="fa-solid fa-pen-nib service-icon" id="icon-service-graphics"></i>
+                </div>
+                <h3>Graphic Design</h3>
+                <p>Eye-catching logos, branding materials, custom website layouts, and creative social assets designed
+                    in Figma and Photoshop.</p>
+            </div>
+
+            <div class="service-card" id="service-video">
+                <div class="service-icon-outer">
+                    <i class="fa-solid fa-film service-icon" id="icon-service-video"></i>
+                </div>
+                <h3>Video Editing</h3>
+                <p>High-quality promotional ads, product demonstrations, reels, and video edits structured to capture
+                    interest and drive conversions.</p>
+            </div>
+
+            <div class="service-card" id="service-analytics">
+                <div class="service-icon-outer">
+                    <i class="fa-solid fa-chart-line service-icon" id="icon-service-analytics"></i>
+                </div>
+                <h3>Data Analytics & Dashboards</h3>
+                <p>Custom corporate reporting dashboards designed in Power BI and SQL to help businesses audit metrics
+                    and make data-driven decisions.</p>
+            </div>
+
+            <div class="service-card" id="service-social">
+                <div class="service-icon-outer">
+                    <i class="fa-solid fa-bullhorn service-icon" id="icon-service-social"></i>
+                </div>
+                <h3>Social Media Management</h3>
+                <p>Complete management of online networks, strategic calendar drafting, audience interaction, and page
+                    optimization.</p>
+            </div>
+
+            <div class="service-card" id="service-writing">
+                <div class="service-icon-outer">
+                    <i class="fa-solid fa-pen-fancy service-icon" id="icon-service-writing"></i>
+                </div>
+                <h3>Content Writing</h3>
+                <p>SEO copywriting, informative blogs, high-converting product pages, and social media text structured
+                    for your target audience.</p>
+            </div>
+        </div>
+
+        <!-- Selected Work (Long Cards showcasing work) -->
+        <div class="work-section-header">
+            <span class="section-subtitle">Our Portfolio</span>
+            <h3>Featured Projects & Completed Work</h3>
+            <p>A closer look at how we design, build, and optimize products for clients.</p>
+        </div>
+
+        <div class="work-cards-container">
+            <!-- Card 1: Power BI Dashboard -->
+            <div class="work-card-long" id="project-dashboard">
+                <div class="work-image-area">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <span class="browser-dot close"></span>
+                            <span class="browser-dot minimize"></span>
+                            <span class="browser-dot maximize"></span>
+                            <div class="browser-address"><i class="fa-solid fa-lock"></i>
+                                analytics.kreatic.com/behavior-dashboard</div>
+                        </div>
+                        <div class="browser-screen">
+                            <img src="images/Screenshot 2026-07-16 122818.png"
+                                alt="Customer Behaviour Power BI Dashboard" class="work-card-img"
+                                id="img-project-dashboard">
+                        </div>
+                    </div>
+                </div>
+                <div class="work-info-area">
+                    <span class="work-tag">Data Analytics & SQL</span>
+                    <h4 class="work-card-title">Customer Behaviour Dashboard</h4>
+                    <p class="work-card-desc">An interactive executive reporting dashboard tracking client subscription
+                        trends, average transaction amounts, and category sales. Connected to a structured relational
+                        SQL database, it provides dynamic filtering by shipping class, gender, and age brackets,
+                        enabling business teams to execute precise, targeted marketing campaigns.</p>
+                    <ul class="work-meta-list">
+                        <li class="work-meta-item">Power BI</li>
+                        <li class="work-meta-item">SQL</li>
+                        <li class="work-meta-item">Data Science</li>
+                        <li class="work-meta-item">UI/UX Design</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 2: Bakery Desktop Mockup -->
+            <div class="work-card-long" id="project-bakery-desktop">
+                <div class="work-image-area">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <span class="browser-dot close"></span>
+                            <span class="browser-dot minimize"></span>
+                            <span class="browser-dot maximize"></span>
+                            <div class="browser-address"><i class="fa-solid fa-lock"></i> bakery.kreatic.com</div>
+                        </div>
+                        <div class="browser-screen">
+                            <img src="images/WhatsApp Image 2026-07-16 at 6.40.13 PM.jpeg"
+                                alt="Bakelio Bakery Desktop Website Layout" class="work-card-img"
+                                id="img-project-bakery-desktop">
+                        </div>
+                    </div>
+                </div>
+                <div class="work-info-area">
+                    <span class="work-tag">Web Development & UI/UX</span>
+                    <h4 class="work-card-title">Bakelio Bakery E-Commerce Website</h4>
+                    <p class="work-card-desc">A premium desktop web layout for "Bakelio Bakery". Featuring rich visual
+                        card placements, interactive address mapping, custom gift hampers selection panels, and a sleek
+                        modern contact form. The layout blends warm colors with clean grids to maximize brand appeal and
+                        simplify checkout flow.</p>
+                    <ul class="work-meta-list">
+                        <li class="work-meta-item">Figma</li>
+                        <li class="work-meta-item">Canva</li>
+                        <li class="work-meta-item">React</li>
+                        <li class="work-meta-item">Tailored UI</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 3: Bakery Mobile Special Mockup -->
+            <div class="work-card-long" id="project-bakery-mobile">
+                <div class="work-image-area">
+                    <div class="phone-mockup">
+                        <div class="phone-speaker"></div>
+                        <div class="phone-screen">
+                            <img src="images/WhatsApp Image 2026-07-16 at 6.41.11 PM.jpeg"
+                                alt="Bakelio Mobile App Specials Screen" class="work-card-img"
+                                id="img-project-bakery-mobile">
+                        </div>
+                    </div>
+                </div>
+                <div class="work-info-area">
+                    <span class="work-tag">Mobile Interface Design</span>
+                    <h4 class="work-card-title">Bakelio Mobile UI & Special Offer Screen</h4>
+                    <p class="work-card-desc">A mobile-first user interface showing sweet treats and specials with
+                        high-fidelity graphics. Designed with cards featuring bookmark icons, dynamic descriptions, CTA
+                        buttons, and clear pricing displays, ensuring a premium mobile navigation experience.</p>
+                    <ul class="work-meta-list">
+                        <li class="work-meta-item">Photoshop</li>
+                        <li class="work-meta-item">Figma</li>
+                        <li class="work-meta-item">Mobile First</li>
+                        <li class="work-meta-item">Graphic Assets</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Process Section (White Background) -->
+    <section class="section-light" id="process">
+        <div class="glow-blob glow-blob-1"
+            style="top: 30%; right: 10%; width: 350px; height: 350px; background: rgba(99, 102, 241, 0.08);"></div>
+        <div class="section-header">
+            <span class="section-subtitle">How We Work</span>
+            <h2 class="section-title">Our <span class="accent-text">Work Process</span></h2>
+        </div>
+
+        <div class="process-flow">
+            <!-- Step 1 -->
+            <div class="process-step" id="step-strategy">
+                <div class="process-icon-outer">
+                    <i class="fa-solid fa-lightbulb" id="icon-step-strategy"></i>
+                </div>
+                <div class="process-number">1</div>
+                <div class="process-content">
+                    <h3>Discovery & Strategy</h3>
+                    <p>We consult with your team to outline business objectives, research target demographics, map
+                        system features, and establish a clear development roadmap.</p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="process-step" id="step-design">
+                <div class="process-icon-outer">
+                    <i class="fa-solid fa-compass-drafting" id="icon-step-design"></i>
+                </div>
+                <div class="process-number">2</div>
+                <div class="process-content">
+                    <h3>UI/UX & Graphic Design</h3>
+                    <p>Using Figma, Photoshop, and Canva, we draft high-fidelity UI layouts, assets, and branding
+                        guidelines, ensuring a modern look that matches your company identity.</p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="process-step" id="step-dev">
+                <div class="process-icon-outer">
+                    <i class="fa-solid fa-laptop-code" id="icon-step-dev"></i>
+                </div>
+                <div class="process-number">3</div>
+                <div class="process-content">
+                    <h3>Development & Coding</h3>
+                    <p>Our developers build the product using React, Python, or the MERN stack. We write clean,
+                        optimized code to ensure swift loading times and responsive styling.</p>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="process-step" id="step-testing">
+                <div class="process-icon-outer">
+                    <i class="fa-solid fa-square-poll-vertical" id="icon-step-testing"></i>
+                </div>
+                <div class="process-number">4</div>
+                <div class="process-content">
+                    <h3>Testing & SQL Analytics</h3>
+                    <p>We verify cross-browser compatibility, responsive grids, load performance, and configure
+                        SQL/Power BI analytics dashboards to audit launch readiness.</p>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="process-step" id="step-launch">
+                <div class="process-icon-outer">
+                    <i class="fa-solid fa-rocket" id="icon-step-launch"></i>
+                </div>
+                <div class="process-number">5</div>
+                <div class="process-content">
+                    <h3>Launch & Social Strategy</h3>
+                    <p>We deploy your digital platform and coordinate launch campaigns. In addition, we deliver content
+                        writing and manage social channels for organic reach.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies & Tools Section (White Background) -->
+    <section class="section-light" id="tech">
+        <div class="glow-blob glow-blob-1"
+            style="bottom: 10%; left: 10%; width: 400px; height: 400px; background: rgba(6, 182, 212, 0.08);"></div>
+        <div class="section-header">
+            <span class="section-subtitle">Our Tools</span>
+            <h2 class="section-title">Technologies <span class="accent-text">& Tools We Use</span></h2>
+        </div>
+
+        <div class="tech-container">
+            <div class="tech-grid">
+                <div class="tech-card" id="tech-figma">
+                    <i class="fa-brands fa-figma tech-icon" id="icon-tech-figma"></i>
+                    <div class="tech-name">Figma</div>
+                </div>
+
+                <div class="tech-card" id="tech-canva">
+                    <i class="fa-solid fa-palette tech-icon" id="icon-tech-canva"></i>
+                    <div class="tech-name">Canva</div>
+                </div>
+
+                <div class="tech-card" id="tech-python">
+                    <i class="fa-brands fa-python tech-icon" id="icon-tech-python"></i>
+                    <div class="tech-name">Python</div>
+                </div>
+
+                <div class="tech-card" id="tech-react">
+                    <i class="fa-brands fa-react tech-icon" id="icon-tech-react"></i>
+                    <div class="tech-name">React</div>
+                </div>
+
+                <div class="tech-card" id="tech-mern">
+                    <i class="fa-solid fa-layer-group tech-icon" id="icon-tech-mern"></i>
+                    <div class="tech-name">MERN Stack</div>
+                </div>
+
+                <div class="tech-card" id="tech-powerbi">
+                    <i class="fa-solid fa-chart-column tech-icon" id="icon-tech-powerbi"></i>
+                    <div class="tech-name">Power BI</div>
+                </div>
+
+                <div class="tech-card" id="tech-sql">
+                    <i class="fa-solid fa-database tech-icon" id="icon-tech-sql"></i>
+                    <div class="tech-name">SQL</div>
+                </div>
+
+                <div class="tech-card" id="tech-photoshop">
+                    <i class="fa-solid fa-image tech-icon" id="icon-tech-photoshop"></i>
+                    <div class="tech-name">Photoshop</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer Sections (Black Background) -->
+    <section class="section-dark" id="contact">
+        <div class="glow-blob glow-blob-1"
+            style="top: 10%; left: 5%; width: 450px; height: 450px; background: rgba(0, 242, 254, 0.12);"></div>
+        <div class="glow-blob glow-blob-2"
+            style="bottom: 10%; right: 5%; width: 400px; height: 400px; background: rgba(124, 58, 237, 0.15);"></div>
+        <div class="section-header">
+            <span class="section-subtitle">Get In Touch</span>
+            <h2 class="section-title">Contact <span class="accent-text">Information</span></h2>
+        </div>
+
+        <div class="contact-wrapper">
+            <!-- Contact Details Panel -->
+            <div class="contact-info-panel">
+                <h3>Let's Grow Together</h3>
+                <p class="contact-intro">Ready to elevate your online presence? Reach out to Kreatic Technologies. Fill
+                    out the contact form or connect via phone, email, and social networks.</p>
+
+                <div class="contact-details">
+                    <div class="contact-item" id="contact-detail-phone">
+                        <div class="contact-item-icon">
+                            <i class="fa-solid fa-phone" id="icon-contact-phone"></i>
+                        </div>
+                        <div class="contact-item-text">
+                            <h4>Phone</h4>
+                            <a href="tel:+918091454622">+91 80914 54622</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item" id="contact-detail-email">
+                        <div class="contact-item-icon">
+                            <i class="fa-solid fa-envelope" id="icon-contact-email"></i>
+                        </div>
+                        <div class="contact-item-text">
+                            <h4>Email</h4>
+                            <a href="mailto:hrkreatic@gmail.com">hrkreatic@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Channels -->
+                <h4 class="socials-title">Follow Us</h4>
+                <div class="socials-grid">
+                    <a href="https://www.instagram.com/kreatic_technologies?utm_source=qr" target="_blank"
+                        class="social-button" id="social-instagram" rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://www.facebook.com/share/18uyy2AoN8/" target="_blank" class="social-button"
+                        id="social-facebook" rel="noopener noreferrer">
+                        <i class="fa-brands fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="https://www.instagram.com/kreatic_technologies?utm_source=qr" target="_blank"
+                        class="social-button" id="social-linkedin" rel="noopener noreferrer">
+                        <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Form Panel -->
+            <div class="contact-form-panel">
+                <h3>Send Us A Message</h3>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name" required id="form-name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your Email" required id="form-email">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" placeholder="Your Phone Number" id="form-phone">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Your Message" required id="form-message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-submit-btn" id="form-submit">Submit Message <i
+                            class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/download.png" alt="Kreatic Technologies" class="footer-logo-img" id="footer-logo-image">
+                <span class="footer-logo-text">KREATIC<span>.</span></span>
+            </div>
+            <div class="footer-copyright" id="footer-copy-text">
+                &copy; 2026 Kreatic Technologies. All Rights Reserved.
+            </div>
+            <a href="#hero" class="footer-top-btn" aria-label="Scroll to top" id="footer-scroll-top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="index.js"></script>
+</body>
+
+</html>

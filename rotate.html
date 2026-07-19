@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smooth Moving Border</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#0b1120;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+.moving-border{
+    position:relative;
+    display:inline-flex;
+    padding:2px;
+    border-radius:999px;
+    overflow:hidden;
+}
+
+/* Long rotating border */
+.moving-border::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    border-radius:inherit;
+
+    background:conic-gradient(
+        from 0deg,
+
+        transparent 0deg,
+        transparent 140deg,
+
+        rgba(30,144,255,.15) 160deg,
+        rgba(30,144,255,.4) 180deg,
+        #1e90ff 210deg,
+        #7fd3ff 240deg,
+        #1e90ff 270deg,
+        #7fd3ff 300deg,
+        #1e90ff 330deg,
+        rgba(30,144,255,.4) 345deg,
+        transparent 360deg
+    );
+
+    animation:spin 2s linear infinite;
+    will-change:transform;
+}
+
+.content{
+    position:relative;
+    z-index:1;
+    background:#0b1120;
+    color:#fff;
+    padding:15px 40px;
+    border-radius:999px;
+    font-size:18px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="moving-border">
+    <div class="content">
+        IMAGINE • INNOVATE • INSPIRE
+    </div>
+</div>
+
+</body>
+</html>
