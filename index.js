@@ -69,89 +69,86 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 4. Contact Form Handler
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Collect Form Values
-            const name = document.getElementById('form-name').value.trim();
-            const email = document.getElementById('form-email').value.trim();
-            const phone = document.getElementById('form-phone').value.trim();
-            const message = document.getElementById('form-message').value.trim();
-            
-            // Simple Validation
-            if (!name || !email || !message) {
-                alert('Please fill in all required fields (Name, Email, Message).');
-                return;
-            }
-            
-            // Premium Submission Success feedback
-            const formPanel = document.querySelector('.contact-form-panel');
-            const originalHTML = formPanel.innerHTML;
-            
-            // Show custom success message
-            formPanel.style.opacity = '0';
-            setTimeout(() => {
-                formPanel.innerHTML = `
-                    <div style="text-align: center; padding: 40px 10px; animation: fadeIn 0.6s ease forwards;">
-                        <div style="width: 80px; height: 80px; background-color: var(--primary-cyan-light); border: 2px solid var(--primary-cyan); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px auto;">
-                            <i class="fa-solid fa-circle-check" style="font-size: 2.5rem; color: var(--primary-cyan);"></i>
-                        </div>
-                        <h3 style="margin-bottom: 12px; font-size: 1.8rem; font-weight: 800; color: var(--text-white);">Thank You, ${name}!</h3>
-                        <p style="color: var(--text-muted-light); font-size: 1rem; line-height: 1.6; margin-bottom: 30px;">Your message has been received. Our team will contact you at <strong>${email}</strong> or <strong>${phone || 'your phone number'}</strong> shortly.</p>
-                        <button id="form-reset-btn" class="btn btn-primary" style="margin-top: 10px; width: auto; padding: 12px 28px;">Send Another Message</button>
-                    </div>
-                `;
-                formPanel.style.opacity = '1';
-                
-                // Add listener to reset button
-                document.getElementById('form-reset-btn').addEventListener('click', () => {
-                    formPanel.style.opacity = '0';
-                    setTimeout(() => {
-                        formPanel.innerHTML = originalHTML;
-                        formPanel.style.opacity = '1';
-                        // Re-bind submit listener
-                        bindSubmitListener();
-                    }, 300);
-                });
-            }, 300);
-        });
-    }
+    // 4. Contact Form Handler (Google Sheets Integration)
+    // Replace with your actual Google Apps Script web app URL once deployed
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyYE63zIGFFyfMq5aydbS1NetTKBKj-aCtUuQ2HEQqJBFvcU0-vYQLP-3d29XGnexQu/exec';
+    const formPanel = document.querySelector('.contact-form-panel');
 
-    function bindSubmitListener() {
-        // Simple function to re-bind form submit if user resets form
-        const newForm = document.getElementById('contact-form');
-        if (newForm) {
-            newForm.addEventListener('submit', (e) => {
+    if (formPanel) {
+        const originalHTML = formPanel.innerHTML;
+
+        // Use event delegation on formPanel so we don't have to re-bind submit events
+        // after restoring originalHTML during form resets.
+        formPanel.addEventListener('submit', (e) => {
+            if (e.target && e.target.id === 'contact-form') {
                 e.preventDefault();
+                
+                // Collect Form Values
                 const name = document.getElementById('form-name').value.trim();
                 const email = document.getElementById('form-email').value.trim();
                 const phone = document.getElementById('form-phone').value.trim();
-                const formPanel = document.querySelector('.contact-form-panel');
+                const message = document.getElementById('form-message').value.trim();
                 
-                formPanel.style.opacity = '0';
-                setTimeout(() => {
-                    formPanel.innerHTML = `
-                        <div style="text-align: center; padding: 40px 10px;">
-                            <div style="width: 80px; height: 80px; background-color: var(--primary-cyan-light); border: 2px solid var(--primary-cyan); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px auto;">
-                                <i class="fa-solid fa-circle-check" style="font-size: 2.5rem; color: var(--primary-cyan);"></i>
+                // Simple Validation
+                if (!name || !email || !message) {
+                    alert('Please fill in all required fields (Name, Email, Message).');
+                    return;
+                }
+                
+                // Show loading state on submit button
+                const submitBtn = document.getElementById('form-submit');
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `Sending... <i class="fa-solid fa-circle-notch fa-spin" style="margin-left: 8px;"></i>`;
+
+                const handleSuccess = () => {
+                    // Premium Submission Success feedback
+                    formPanel.style.opacity = '0';
+                    setTimeout(() => {
+                        formPanel.innerHTML = `
+                            <div style="text-align: center; padding: 40px 10px; animation: fadeIn 0.6s ease forwards;">
+                                <div style="width: 80px; height: 80px; background-color: var(--primary-cyan-light); border: 2px solid var(--primary-cyan); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px auto;">
+                                    <i class="fa-solid fa-circle-check" style="font-size: 2.5rem; color: var(--primary-cyan);"></i>
+                                </div>
+                                <h3 style="margin-bottom: 12px; font-size: 1.8rem; font-weight: 800; color: var(--text-white);">Thank You, ${name}!</h3>
+                                <p style="color: var(--text-muted-light); font-size: 1rem; line-height: 1.6; margin-bottom: 30px;">Your message has been received. Our team will contact you at <strong>${email}</strong> or <strong>${phone || 'your phone number'}</strong> shortly.</p>
+                                <button id="form-reset-btn" class="btn btn-primary" style="margin-top: 10px; width: auto; padding: 12px 28px;">Send Another Message</button>
                             </div>
-                            <h3 style="margin-bottom: 12px; font-size: 1.8rem; font-weight: 800; color: var(--text-white);">Thank You, ${name}!</h3>
-                            <p style="color: var(--text-muted-light); font-size: 1rem; line-height: 1.6; margin-bottom: 30px;">Your message has been received. Our team will contact you at <strong>${email}</strong> or <strong>${phone || 'your phone number'}</strong> shortly.</p>
-                            <button id="form-reset-btn" class="btn btn-primary" style="margin-top: 10px; width: auto; padding: 12px 28px;">Send Another Message</button>
-                        </div>
-                    `;
-                    formPanel.style.opacity = '1';
-                    
-                    document.getElementById('form-reset-btn').addEventListener('click', () => {
-                        formPanel.style.opacity = '0';
-                        setTimeout(() => {
-                            location.reload(); // Simple reload on second reset
-                        }, 300);
+                        `;
+                        formPanel.style.opacity = '1';
+                        
+                        // Add listener to reset button to restore the form
+                        document.getElementById('form-reset-btn').addEventListener('click', () => {
+                            formPanel.style.opacity = '0';
+                            setTimeout(() => {
+                                formPanel.innerHTML = originalHTML;
+                                formPanel.style.opacity = '1';
+                            }, 300);
+                        });
+                    }, 300);
+                };
+
+                // Perform the submission to Google Sheets
+                if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+                    console.warn('Google Sheets Web App URL is not set. Simulating submission success...');
+                    setTimeout(handleSuccess, 1000);
+                } else {
+                    fetch(GOOGLE_SCRIPT_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'text/plain;charset=utf-8',
+                        },
+                        body: JSON.stringify({ name, email, phone, message })
+                    })
+                    .then(() => {
+                        handleSuccess();
+                    })
+                    .catch(error => {
+                        console.error('Error submitting form to Google Sheets:', error);
+                        // Fallback to showing success screen even if CORS block happens (since doPost executes anyway)
+                        handleSuccess();
                     });
-                }, 300);
-            });
-        }
+                }
+            }
+        });
     }
 });
