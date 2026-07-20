@@ -278,7 +278,7 @@
                 </div>
             </div>
 
-            <!-- Card 2: Bakery Desktop Mockup -->
+            <!-- Card 2: Bakery & Sourav Desktop Mockups (Left-Right Scrollable Slider) -->
             <div class="work-card-long" id="project-bakery-desktop">
                 <div class="work-image-area">
                     <div class="browser-mockup">
@@ -286,19 +286,41 @@
                             <span class="browser-dot close"></span>
                             <span class="browser-dot minimize"></span>
                             <span class="browser-dot maximize"></span>
-                            <div class="browser-address"><i class="fa-solid fa-lock"></i> bakery.kreatic.com</div>
+                            <div class="browser-address" id="bakery-browser-address"><i class="fa-solid fa-lock"></i> bakery.kreatic.com</div>
+                            <div class="slider-counter"><span id="slide-num">1</span>/2</div>
                         </div>
                         <div class="browser-screen">
-                            <img src="images/WhatsApp Image 2026-07-16 at 6.40.13 PM.jpeg"
-                                alt="Bakelio Bakery Desktop Website Layout" class="work-card-img"
-                                id="img-project-bakery-desktop">
+                            <div class="horizontal-slider" id="bakery-slider">
+                                <div class="slide-item active">
+                                    <img src="images/WhatsApp Image 2026-07-16 at 6.40.13 PM.jpeg"
+                                        alt="Bakelio Bakery Desktop Website Layout" class="work-card-img"
+                                        id="img-project-bakery-desktop">
+                                </div>
+                                <div class="slide-item">
+                                    <img src="images/sourav.png"
+                                        alt="Web Application Layout" class="work-card-img"
+                                        id="img-project-sourav-desktop">
+                                </div>
+                            </div>
+                            <!-- Left / Right Navigation Controls -->
+                            <button class="slider-arrow slider-arrow-left" id="slider-prev" aria-label="Previous Slide">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button class="slider-arrow slider-arrow-right" id="slider-next" aria-label="Next Slide">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                            <!-- Slider Dots -->
+                            <div class="slider-dots">
+                                <span class="dot active" data-slide="0"></span>
+                                <span class="dot" data-slide="1"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="work-info-area">
                     <span class="work-tag">Web Development & UI/UX</span>
-                    <h4 class="work-card-title">Bakelio Bakery E-Commerce Website</h4>
-                    <p class="work-card-desc">A premium desktop web layout for "Bakelio Bakery". Featuring rich visual
+                    <h4 class="work-card-title" id="bakery-slide-title">Bakelio Bakery E-Commerce Website</h4>
+                    <p class="work-card-desc" id="bakery-slide-desc">A premium desktop web layout for "Bakelio Bakery". Featuring rich visual
                         card placements, interactive address mapping, custom gift hampers selection panels, and a sleek
                         modern contact form. The layout blends warm colors with clean grids to maximize brand appeal and
                         simplify checkout flow.</p>
@@ -429,12 +451,12 @@
         <div class="tech-container">
             <div class="tech-grid">
                 <div class="tech-card" id="tech-figma">
-                    <i class="fa-brands fa-figma tech-icon" id="icon-tech-figma"></i>
+                    <img src="images/figma.webp" alt="Figma" class="tech-icon-img" id="icon-tech-figma">
                     <div class="tech-name">Figma</div>
                 </div>
 
                 <div class="tech-card" id="tech-canva">
-                    <i class="fa-solid fa-palette tech-icon" id="icon-tech-canva"></i>
+                    <img src="images/canva.webp" alt="Canva" class="tech-icon-img" id="icon-tech-canva">
                     <div class="tech-name">Canva</div>
                 </div>
 
@@ -454,7 +476,7 @@
                 </div>
 
                 <div class="tech-card" id="tech-powerbi">
-                    <i class="fa-solid fa-chart-column tech-icon" id="icon-tech-powerbi"></i>
+                    <img src="images/PowerBI.png" alt="Power BI" class="tech-icon-img" id="icon-tech-powerbi">
                     <div class="tech-name">Power BI</div>
                 </div>
 
@@ -464,7 +486,7 @@
                 </div>
 
                 <div class="tech-card" id="tech-photoshop">
-                    <i class="fa-solid fa-image tech-icon" id="icon-tech-photoshop"></i>
+                    <img src="images/Photoshop.webp" alt="Photoshop" class="tech-icon-img" id="icon-tech-photoshop">
                     <div class="tech-name">Photoshop</div>
                 </div>
             </div>
@@ -557,7 +579,6 @@
         <div class="footer-content">
             <div class="footer-logo">
                 <img src="images/download.png" alt="Kreatic Technologies" class="footer-logo-img" id="footer-logo-image">
-                <span class="footer-logo-text">KREATIC<span>.</span></span>
             </div>
             <div class="footer-copyright" id="footer-copy-text">
                 &copy; 2026 Kreatic Technologies. All Rights Reserved.
