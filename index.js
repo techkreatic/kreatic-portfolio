@@ -151,4 +151,87 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 5. Featured Projects Horizontal Slider (Bakelio & Sourav)
+    const bakerySlider = document.getElementById('bakery-slider');
+    const prevBtn = document.getElementById('slider-prev');
+    const nextBtn = document.getElementById('slider-next');
+    const dots = document.querySelectorAll('.slider-dots .dot');
+    const slideNum = document.getElementById('slide-num');
+    const browserAddress = document.getElementById('bakery-browser-address');
+    const slideTitle = document.getElementById('bakery-slide-title');
+    const slideDesc = document.getElementById('bakery-slide-desc');
+
+    if (bakerySlider && prevBtn && nextBtn) {
+        const slidesData = [
+            {
+                address: '<i class="fa-solid fa-lock"></i> bakery.kreatic.com',
+                title: 'Bakelio Bakery E-Commerce Website',
+                desc: 'A premium desktop web layout for "Bakelio Bakery". Featuring rich visual card placements, interactive address mapping, custom gift hampers selection panels, and a sleek modern contact form. The layout blends warm colors with clean grids to maximize brand appeal and simplify checkout flow.'
+            },
+            {
+                address: '<i class="fa-solid fa-lock"></i> sourav.kreatic.com/portfolio',
+                title: 'Web Application Layout',
+                desc: 'A high-impact responsive corporate web application engineered with custom components, vibrant design tokens, and smooth interactive workflows to elevate digital branding and drive user conversions.'
+            }
+        ];
+
+        let currentSlide = 0;
+
+        const updateSlideUI = (index) => {
+            currentSlide = index;
+            const slideWidth = bakerySlider.clientWidth;
+            bakerySlider.scrollTo({
+                left: index * slideWidth,
+                behavior: 'smooth'
+            });
+
+            // Update Dots
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === index);
+            });
+
+            // Update Counter
+            if (slideNum) slideNum.textContent = index + 1;
+
+            // Update Text Content
+            if (slidesData[index]) {
+                if (browserAddress) browserAddress.innerHTML = slidesData[index].address;
+                if (slideTitle) slideTitle.textContent = slidesData[index].title;
+                if (slideDesc) slideDesc.textContent = slidesData[index].desc;
+            }
+        };
+
+        prevBtn.addEventListener('click', () => {
+            const nextIdx = currentSlide === 0 ? slidesData.length - 1 : currentSlide - 1;
+            updateSlideUI(nextIdx);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const nextIdx = currentSlide === slidesData.length - 1 ? 0 : currentSlide + 1;
+            updateSlideUI(nextIdx);
+        });
+
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                updateSlideUI(idx);
+            });
+        });
+
+        // Sync on scroll/swipe
+        bakerySlider.addEventListener('scroll', () => {
+            const slideWidth = bakerySlider.clientWidth;
+            if (slideWidth > 0) {
+                const index = Math.round(bakerySlider.scrollLeft / slideWidth);
+                if (index !== currentSlide && slidesData[index]) {
+                    currentSlide = index;
+                    dots.forEach((dot, idx) => dot.classList.toggle('active', idx === index));
+                    if (slideNum) slideNum.textContent = index + 1;
+                    if (browserAddress) browserAddress.innerHTML = slidesData[index].address;
+                    if (slideTitle) slideTitle.textContent = slidesData[index].title;
+                    if (slideDesc) slideDesc.textContent = slidesData[index].desc;
+                }
+            }
+        });
+    }
 });
